@@ -363,3 +363,14 @@ La página se comportará de manera diferente respecto a tamaños de pantalla, a
     }
 }
 ```
+
+### Footer
+En la página al final habra en elemento footer con un texto:
+```sh
+footer {
+    text-align: center;
+    background: var(--color1);
+    color: var(--color2);
+    padding: 15px;
+}
+```

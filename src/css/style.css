@@ -16,10 +16,15 @@
 
 /* estandar del cuerpo */
 body{
+    display: block;
     font-family: Arial, Helvetica, sans-serif;
     font-size: 100%;
     background-color: var(--color2);
 }
+.sidebar{
+    display: none;
+}
+
 
 /* diseños en el texto */
 h1{
@@ -134,9 +139,15 @@ nav ul li a{
     transform: translateY(-8px) rotate(-45deg);
 }
 
-.sidebar{
-    display: none;
+/* FOOTER */
+footer {
+    text-align: center;
+    background: var(--color1);
+    color: var(--color2);
+    padding: 15px;
 }
+
+
 
 /* media Query: small (>= 576px) */
 @media screen and (min-width: 576px){
@@ -273,3 +284,4 @@ nav ul li a{
         width: 900px;
     }
 }
+
