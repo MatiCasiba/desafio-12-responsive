@@ -133,3 +133,143 @@ nav ul li a{
 #menu:checked ~ .menu-toogle .bottom-bread{
     transform: translateY(-8px) rotate(-45deg);
 }
+
+.sidebar{
+    display: none;
+}
+
+/* media Query: small (>= 576px) */
+@media screen and (min-width: 576px){
+    /* Mostrando el menu de forma vertical*/
+    nav{
+        position: static;
+        display: block;
+        background: none;
+        width: auto;
+    }
+
+    nav ul{
+        display: block;
+    }
+
+    nav ul li{
+        padding: 2px 0;
+        text-align: left;
+    }
+
+    nav ul li a{
+        padding: 10px 15px;
+    }
+
+    /* ocultando el menu toogle */
+    .menu-toogle{
+        display: none;
+    }
+}
+
+/* media Query: medium (>=768px) */
+@media screen and (min-width: 768px){
+    .contenedor-tarjetas{
+        display: flex;
+        width: 500px;
+        margin: auto;
+        gap: 40px;
+    }
+    nav{
+        position: static;
+        display: flex;
+        background: none;
+        width: auto;
+    }
+    nav ul{
+        display: flex;
+        gap: 20px;
+    }
+    nav ul li{
+        padding: 5px;
+        font-size: 1.5rem;
+    }
+}
+
+@media screen and (min-width: 992px){
+    .contenedor-tarjetas{
+        display: block;
+        width: 700px;
+    }
+    .card{
+        max-width: 700px;
+    }
+
+    nav ul li{
+        text-align: center;
+        padding: 20px;
+        font-size: 1.5rem;
+    }
+
+    h1{
+        font-size: 3.5rem;
+        letter-spacing: 2px;
+    }
+    h2{
+        font-size: 3rem;
+        text-align: center;
+        margin-bottom: 10px;
+    }
+    h3{
+        font-size: 2.5rem;
+        margin-bottom: 10px;
+        text-align: center;
+    }
+    p{
+        font-size: 1.8rem;
+        color: var(--color1);
+        text-align: end;
+        letter-spacing: 1px;
+        margin-top: 20px;
+    }
+    .texto{
+        text-align: center;
+    }
+
+    .card{
+        margin-top: 50px;
+        margin-bottom: 50px;
+    }
+}
+
+@media screen and (min-width: 1200px){
+    main{
+        display: flex;
+        justify-content: space-between;
+        margin: auto;
+    }
+    .contenido{
+        width: 65%;
+    }
+    .sidebar{
+        display: block;
+        width: 30%;
+        background-color: var(--color5);
+        padding: 20px;
+        border: 1px solid var(--color3);
+        border-top: none;
+        box-shadow: 10px 2px 10px var(--color1);
+
+    }
+}
+
+@media screen and (min-width: 1400px){
+    .contenido{
+        width: 80%;
+    }
+    .sidebar{
+        width: 20%;
+    }
+
+    .card{
+        max-width: 900px;
+    }
+    .contenedor-tarjetas{
+        width: 900px;
+    }
+}
