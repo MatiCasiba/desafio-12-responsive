@@ -1,0 +1,286 @@
+/* reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Variables de colores */
+:root{
+    --color1: #383d3b;
+    --color2: #eee5e9;
+    --color3: #7c7c7c;
+    --color4: #92dce5;
+    --color5: #52dee5;
+}
+
+/* estandar del cuerpo */
+body{
+    display: block;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 100%;
+    background-color: var(--color2);
+}
+.sidebar{
+    display: none;
+}
+
+
+/* diseños en el texto */
+h1{
+    font-size: 2.5rem;
+    letter-spacing: 2px;
+}
+h2{
+    font-size: 1.8rem;
+    text-align: center;
+    margin-bottom: 10px;
+}
+h3{
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+p{
+    font-size: 1.3rem;
+    color: var(--color1);
+    letter-spacing: 1px;
+}
+
+
+/* CARDS - Tarjetas */
+.card{
+    background-color: var(--color4);
+    max-width: 400px;
+
+    margin: auto;
+    margin-top: 15px;
+    margin-bottom: 25px;
+    padding: 3%;
+
+    border-top-left-radius: 30px;
+    border-bottom-right-radius: 30px;
+    border:1px solid var(--color3);
+
+    box-shadow: -10px 5px 10px var(--color1);
+}
+
+
+/* HEADER */
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--color5);
+    padding: 10px 20px;
+    color: var(--color1);
+    position: relative;
+}
+
+nav {
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    background-color: var(--color5);
+    display: none;
+}
+
+nav ul{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li{
+    text-align: center;
+    padding: 15px;
+    font-size: 1.2rem;
+}
+
+nav ul li a{
+    color: var(--color1);
+    text-decoration: none;
+    display: block;
+
+}
+
+#menu{
+    display: none;
+}
+
+#menu:checked ~ nav {
+    display: block;
+}
+
+.menu-toogle{
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    width: 30px;
+}
+
+.menu-toogle span{
+    background-color: var(--color1);
+    height: 4px;
+    width: 30px;
+    margin: 4px 0;
+    transition: transform 0.3s, opacity 0.3s;
+}
+
+#menu:checked ~ .menu-toogle .top-bread{
+    transform: translateY(8px) rotate(45deg);
+
+}
+#menu:checked ~ .menu-toogle .meat{
+    opacity: 0;
+}
+
+#menu:checked ~ .menu-toogle .bottom-bread{
+    transform: translateY(-8px) rotate(-45deg);
+}
+
+/* FOOTER */
+footer {
+    text-align: center;
+    background: var(--color1);
+    color: var(--color2);
+    padding: 15px;
+}
+
+
+
+/* media Query: small (>= 576px) */
+@media screen and (min-width: 576px){
+    /* Mostrando el menu de forma vertical*/
+    nav{
+        position: static;
+        display: block;
+        background: none;
+        width: auto;
+    }
+
+    nav ul{
+        display: block;
+    }
+
+    nav ul li{
+        padding: 2px 0;
+        text-align: left;
+    }
+
+    nav ul li a{
+        padding: 10px 15px;
+    }
+
+    /* ocultando el menu toogle */
+    .menu-toogle{
+        display: none;
+    }
+}
+
+/* media Query: medium (>=768px) */
+@media screen and (min-width: 768px){
+    .contenedor-tarjetas{
+        display: flex;
+        width: 500px;
+        margin: auto;
+        gap: 40px;
+    }
+    nav{
+        position: static;
+        display: flex;
+        background: none;
+        width: auto;
+    }
+    nav ul{
+        display: flex;
+        gap: 20px;
+    }
+    nav ul li{
+        padding: 5px;
+        font-size: 1.5rem;
+    }
+}
+
+@media screen and (min-width: 992px){
+    .contenedor-tarjetas{
+        display: block;
+        width: 700px;
+    }
+    .card{
+        max-width: 700px;
+    }
+
+    nav ul li{
+        text-align: center;
+        padding: 20px;
+        font-size: 1.5rem;
+    }
+
+    h1{
+        font-size: 3.5rem;
+        letter-spacing: 2px;
+    }
+    h2{
+        font-size: 3rem;
+        text-align: center;
+        margin-bottom: 10px;
+    }
+    h3{
+        font-size: 2.5rem;
+        margin-bottom: 10px;
+        text-align: center;
+    }
+    p{
+        font-size: 1.8rem;
+        color: var(--color1);
+        text-align: end;
+        letter-spacing: 1px;
+        margin-top: 20px;
+    }
+    .texto{
+        text-align: center;
+    }
+
+    .card{
+        margin-top: 50px;
+        margin-bottom: 50px;
+    }
+}
+
+@media screen and (min-width: 1200px){
+    main{
+        display: flex;
+        justify-content: space-between;
+        margin: auto;
+    }
+    .contenido{
+        width: 65%;
+    }
+    .sidebar{
+        display: block;
+        width: 30%;
+        background-color: var(--color5);
+        padding: 20px;
+        border: 1px solid var(--color3);
+        border-top: none;
+        box-shadow: 10px 2px 10px var(--color1);
+
+    }
+}
+
+@media screen and (min-width: 1400px){
+    .contenido{
+        width: 80%;
+    }
+    .sidebar{
+        width: 20%;
+    }
+
+    .card{
+        max-width: 900px;
+    }
+    .contenedor-tarjetas{
+        width: 900px;
+    }
+}

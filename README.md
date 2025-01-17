@@ -5,10 +5,75 @@
 # Desafio 12
 En este deasio se estará trabajando con responsive;
 
+## Carpetas
+Como son 4 ejercicios a realizar, crearé una carpeta pages, en estas estarán las carpetas con los ejercicios a, b, c y d, cada undo con su archivo html, y js (en js voy a extraer los estilos de la carpeta css, donde habrá estilos para cada ejercicio)
+* index.html -> contendrá un título y las listas estarán dentro de un contenedor:
+```sh
+<body>
+    <h1>Trabajos</h1>
+    <div class="paginas">
+      <ul>
+        <li><a href="src/pages/ejercicio-a/ejercicio-a.html" target="_blank">Mi Página Web</a></li>
+        <li><a href="src/pages/ejercicio-b/ejercicio-b.html" target="_blank">Galeria</a></li>
+        <li><a href="src/pages/ejercicio-c/ejercicio-c.html" target="_blank">Formulario</a></li>
+        <li><a href="src/pages/ejercicio-d/ejercicio-d.html" target="_blank">Tarjeta</a></li>
+      </ul>
+    </div>
+    <script type="module" src="/src/main.js"></script>
+</body>
+```
+* style.css:
+```sh
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+:root{
+    --color-1: #111;
+    --color-2: #80b9dd;
+    --color-3: #e69797;
+}
+
+html{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 100%;
+    background-color: var(--color-3);
+}
+
+h1{
+    font-size: 3rem;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.paginas{
+    font-size: 1.5rem;
+    text-align: center;
+    max-width: 400px;
+    margin: auto;
+}
+
+li{
+    margin-bottom: 20px;
+    background-color: aqua;
+    padding: 15px;
+    list-style: none;
+
+    border-radius: 10px;
+    box-shadow: 2px 2px 5px;
+}
+
+a{
+    text-decoration: none;
+    color: black;
+}
+```
+
 ## Punto A
 Diseño de una página web básica, tengo que crear una página simple con un encabezado, un menú de navegación, un contenido principal y un pie de página. Así se verá el archivo index.html:
 ```sh
-<body>
+  <body>
     <header>
       <h1>Mi Página Web</h1>
       <input type="checkbox" id="menu">
@@ -56,8 +121,8 @@ Diseño de una página web básica, tengo que crear una página simple con un en
 
     </main>
     <footer>© 2025 Todos los derechos reservados.</footer>
-    <script type="module" src="/src/main.js"></script>
-</body>
+    <script type="module" src="/src/pages/ejercicio-a/main-a.js"></script>
+  </body>
 ```
 ### Variables de colores
 Usaré un :root paa crear varibales de colores, asi luego asignarlos en clases o elementos con un var():
