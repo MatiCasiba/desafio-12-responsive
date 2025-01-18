@@ -439,3 +439,113 @@ footer {
     padding: 15px;
 }
 ```
+
+## Punto B
+Tengo que crear una galeria, que a medida que aumenta la pantalla del dispositivo que sea usado, las imágenes se irá posisionando con las medias querys solicitadasL (extra small, small, medium, large, extra large, extra extra large). Primero fue pensado de manera extra small.
+```sh
+#ejercicio-b.html:
+
+<body>
+    <header>
+        <h1>Galeria</h1>
+    </header>
+    <main>
+        <div class="imagenes">
+            <img src="/public/image/image-1.webp" alt="image NY 1">
+            <img src="/public/image/image-2.webp" alt="image NY 2">
+            <img src="/public/image/image-3.webp" alt="image NY 3">
+            <img src="/public/image/image-4.webp" alt="imagen ventana de hogar">
+            <img src="/public/image/image-5.webp" alt="imagen del centro de shibuya">
+            <img src="/public/image/image-6.webp" alt="imagen montaña de japon">
+        </div>
+    </main>
+
+    <script type="module" src="/src/pages/ejercicio-b/main-b.js"></script>
+</body>
+```
+
+### Breakpoints - Galeria
+Estos breakpoints se encontrarán en el archivo style-b.css dentro de la carpeta css:
+
+* extra small -> Muestra las imágenes en una sola columna.
+```sh
+header{
+    padding: 5px;
+    background-color: var(--color-1);
+    box-shadow: 0 5px 10px;
+}
+h1{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    text-align: center;
+    color: var(--color-3);
+    
+}
+
+.imagenes {
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    gap: 10px; 
+}
+
+.imagenes img {
+    width: 300px;
+    max-width: 400px; # alcanza hasta 400px
+    object-fit: cover; # con esto evito deformaciones
+    border-radius: 5px;
+}
+```
+
+* small -> muestro las imágenes en dos columnas:
+```sh
+@media screen and (min-width: 576px) {
+    .imagenes {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .imagenes img {
+        width: 45%; # Cada imagen ocupa el 45% del ancho (2 columnas)
+    }
+}
+```
+
+* medium -> muestro las imágenes en tres columnas:
+```sh
+@media screen and (min-width: 768px){
+
+    .imagenes img{
+        width: 30%; # 3 columnas
+    }
+}
+```
+
+* large -> va a aumentar el tamaño de las imágenes.
+```sh
+@media screen and (min-width: 992px){
+
+    .imagenes img {
+        width: 32%;
+    }
+}
+```
+
+* extra large -> añado un espacio entre las filas de imágenes:
+```sh
+@media screen and (min-width: 1200px){
+
+    .imagenes{
+        gap: 20px;
+    }
+}
+```
+
+* extra extra large -> Permite que las imágenes se ajusten automáticamente a su tamaño original:
+```sh
+@media screen and (min-width: 1400px){
+    .images img{
+        width: 100%;
+    }
+}
+```
