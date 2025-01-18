@@ -549,3 +549,205 @@ h1{
     }
 }
 ```
+
+## Punto C
+En este punto debo de crear un formulario con diferentes campos (nombre, correo electronico, mensaje), como en los puntos anteriores, tambien acá trabajaré con breakpoints, el formulario se comportará de manera distinta a medida que se agrande la pantalla. Lo construí de la siguiente forma:
+```sh
+# ejerecicio-c.html
+<body>
+    <div class="formulario">
+        <form action="#">
+
+            <div class="image">
+                <img src="/image/human-and-ia.webp" alt="imagen mano humana y de la ia">
+            </div>
+
+            <div class="datos">
+                <label for="nombre">Nombre:</label>
+                <input type="text" id="nombre" name="nombre">
+            </div> 
+
+            <div class="datos">
+                <label for="email">Correo electronico:</label>
+                <input type="email" name="email" id="email">
+            </div>
+
+        </form>
+        <div class="boton"><button>Enviar:</button></div>
+    </div>
+
+    <script type="module" src="/src/pages/ejercicio-c/main-c.js"></script>
+</body>
+```
+
+#### Breakpoints - Formulario
+
+* Primero muestro los campos del formulario uno debajo del otro:
+```sh
+body{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 100%;
+    background-color: var(--color-1);
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+label{
+    letter-spacing: 2px;
+    font-size: 1.2rem;
+    margin-top: 20px;
+    color: var(--color-5);
+}
+
+.formulario{
+    width: 90%;
+    padding: 20px;
+    background: linear-gradient(90deg, var(--color-4), var(--color-2));
+    margin: auto;
+    margin-top: 20px;
+    border-radius: 20px;
+    box-shadow: 0 0 5px 4px var(--color-5);
+}
+
+.image{
+    display: flex;
+    justify-content: center;
+}
+
+.image img{
+    width: 100%;
+    /* max-width: 600px; */
+    border: 2px outset var(--color-4);
+    border-radius: 20px;
+    box-shadow: 0 0 10px 5px var(--color-5);
+}
+.datos{
+    display: flex;
+    flex-direction: column;
+}
+.datos label{
+    margin-bottom: 10px;
+}
+
+input{
+    padding: 10px 20px;
+    width: 100%;
+    border: 2px solid var(--color-5);
+    border-radius: 20px;
+    background-color: var(--color-2);
+    color: var(--color-5);
+    text-align: right;
+}
+
+.boton{
+    display: flex;
+    font-size: 1rem;
+    margin-top: 20px;
+}
+
+button{
+    padding: 10px 20px;
+    font-size: 1rem;
+    font-weight: 700;
+    margin: auto;
+   
+    background-color: var(--color-3);
+    color: var(--color-5);
+    border: 2px solid var(--color-5);
+    border-radius: 20px;
+}
+input:hover{
+    background-color: var(--color-3);
+    border-color: var(--color-4);
+}
+button:hover{
+    background-color: var(--color-2);
+    color: var(--color-4);
+    border-color: var(--color-4);
+}
+```
+
+* Small -> Organiza los campos en dos columnas:
+```sh
+@media screen and (min-width: 576px){
+    form{
+        display: grid; # me permite dividir
+        grid-template-columns: 1fr 1fr; # defino la cantidad y tamaño de columnas 
+    }
+    .image{
+        grid-column: span 2; # con esto defino en que columna empieza y cuantas ocupa
+    }
+    .boton{
+        grid-column: span 2;
+    }
+}
+```
+
+* Medium -> Aumenta el tamaño de los campos de texto:
+```sh
+@media screen and (min-width: 768px){
+    input{
+        padding: 15px;
+        font-size: 20px;
+    }
+    button{
+        font-size: 20px;
+        padding: 15px 30px;
+    }
+}
+```
+
+* Large -> Añade etiquetas flotantes a los campos:
+```sh
+@media screen and (min-width: 992px){
+    .datos{
+        position: relative;
+    }
+    .datos label {
+        position: absolute;
+        top: -12px;
+        left: 10px;
+        padding: 0 5px;
+        font-size: 15px;
+    }
+    input{
+        padding-top: 20px;
+    }
+
+    .image img{
+        width: 100%;
+        margin-bottom: 20px;
+    }
+}
+```
+
+* Extra large -> Centra el formulario en la página:
+```sh
+@media screen and (min-width: 1200px){
+    .formulario{
+        width: 50%;
+        margin: 10px auto;
+        border: 2px solid var(--color-5);
+        padding: 30px;
+        border-radius: 10px;
+    }
+    .image img{
+        border-radius: 10px;
+    }
+}
+```
+
+* Extra extra large -> Añade más espacio entre los campos:
+```sh
+@media screen and (min-width: 1400px){
+    form{
+        gap: 50px;
+    }
+    .boton{
+        margin-top: 30px;
+    }
+}
+```
