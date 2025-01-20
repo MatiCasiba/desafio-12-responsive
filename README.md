@@ -751,3 +751,143 @@ button:hover{
     }
 }
 ```
+
+## Punto D - Tarjeta de producto
+En este punto estaré creando una tarjeta de un producto, le estaré dando diseño y que se vaya comportando de distinta forma a medida que se agrande la pantalla
+
+#### Breakpoints - Tarjeta de producto
+
+* Extra-small: Muestra la imagen encima del contenido:
+```sh
+body{
+    background-color: var(--color-4);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 100%;
+}
+
+h2{
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+p{
+    font-size: 1.5rem;
+    margin: 10px 0 20px 0;
+    text-align: left;
+}
+.precio{
+    font-size: 1.5rem;
+    margin-top: 40px;
+    margin-left: 20px;
+    text-align: left;
+
+}
+
+.card-producto{
+    background: linear-gradient(60deg, var(--color-1), var(--color-1), var(--color-2));
+    color: var(--color-5);
+    width: 400px; 
+    padding: 20px; 
+    border-radius: 10px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.card-producto img{
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 0 10px 2px var(--color-3);
+}
+
+button{
+    font-size: 1.5rem;
+    padding: 10px;
+    margin-top: 20px;
+    border-radius: 10px;
+    background: linear-gradient(50deg, var(--color-2), var(--color-3));
+    border: 2px inset var(--color-6);
+    color: var(--color-6);
+}
+```
+
+* Small: Muestra la imagen al lado del contenido:
+```sh
+@media screen and (min-width: 576px){
+    .card-producto{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        width: 95%;
+        text-align: left;
+    }
+
+    .card-imagen{
+        width: 100%;
+    }
+    .card-imagen img{
+        height: 100%;
+        object-fit: cover;
+
+    }
+
+    .card-contenido{
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+}
+```
+Con display: grid, convierto a .card-producto en un contenedor de cuadrícula, esto me permite colocar elementos dentro de filas y columnas de manera organizada. Con grid-template-columns, creo dos columnas del mismo tamaño (cada una ocupa el 50% del ancho). Otra cosa a destacar, con object-fit: cover, la imagen se recorta si es necesario, manteniendo su proporción sin deformarse.
+
+* Medium: Aumenta el tamaño de la fuente del título:
+```sh
+@media screen and (min-width: 768px){
+    h2{
+        font-size: 2.5rem;
+    }
+}
+```
+
+* Large: Añade una sombra a la tarjeta:
+```sh
+@media screen and (min-width: 992px){
+    .card-producto{
+        box-shadow: 20px 20px 10px var(--color-1);
+    }
+}
+```
+
+* Extra-large: Centra la tarjeta en la página:
+```sh
+@media screen and (min-width: 1200px){
+    .card-producto{
+        width: 95%;
+    }
+    button{
+        margin-top: 100px;
+    }
+}
+
+# La tarjeta ya se encuentra centrada desde inicio, acá solamente le doy un poco más de ancho y trato de bajar más el boton que se encuentra dentro de la tarjeta
+```
+
+* Extra-extra-large: Añade un borde decorativo a la tarjeta:
+```sh
+@media screen and (min-width: 1400px){
+    h2{
+        font-size: 2.8rem;
+    }
+    .card-producto{
+        border: 2px solid var(--color-6);
+    }
+    
+}
+```
+
