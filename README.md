@@ -1,6 +1,6 @@
 * Nombre: Matias Casiba 
 * Link Repo GitHub: https://github.com/MatiCasiba/desafio-12-responsive
-* Link Netlify:
+* Link Netlify: https://pages-responsive.netlify.app/
 
 # Desafio 12
 En este deasio se estará trabajando con responsive;
