@@ -940,3 +940,25 @@ Con display: grid, convierto a .card-producto en un contenedor de cuadrícula, e
 }
 ```
 
+## Vite Config
+Con el archivo vite.config.js, lo que me permite es reconocer los demás archivos html, sin esta configuración, solo estaría procesadno index.html y me ignora los demás archivos.
+```sh
+import {resolve} from 'path' 
+export default{
+    css:{
+        devSourcemap: true
+    },
+    build: {
+        rollupOptions: {
+            input: {
+                main: resolve(__dirname, 'index.html'),
+                ejeA: resolve(__dirname, 'src/pages/ejercicio-a/ejercicio-a.html'),
+                ejeB: resolve(__dirname, 'src/pages/ejercicio-b/ejercicio-b.html'),
+                ejeC: resolve(__dirname, 'src/pages/ejercicio-c/ejercicio-c.html'),
+                ejeD: resolve(__dirname, 'src/pages/ejercicio-d/ejercicio-d.html')
+            }    
+        }
+    }
+}
+```
+
