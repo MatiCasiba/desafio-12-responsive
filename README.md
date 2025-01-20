@@ -123,13 +123,16 @@ Diseño de una página web básica, tengo que crear una página simple con un en
     <script type="module" src="/src/pages/ejercicio-a/main-a.js"></script>
   </body>
 ```
+
 ### Variables de colores
 Usaré un :root paa crear varibales de colores, asi luego asignarlos en clases o elementos con un var():
 ```sh
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+:root{
+    --color1: #383d3b;
+    --color2: #eee5e9;
+    --color3: #7c7c7c;
+    --color4: #92dce5;
+    --color5: #52dee5;
 }
 ```
 
@@ -432,10 +435,12 @@ La página se comportará de manera diferente respecto a tamaños de pantalla, a
 En la página al final habra en elemento footer con un texto:
 ```sh
 footer {
+    font-size: 0.8rem;
     text-align: center;
     background: var(--color1);
     color: var(--color2);
-    padding: 15px;
+    padding: 10px;
+    margin-top: 65px;
 }
 ```
 
