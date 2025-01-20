@@ -10,7 +10,6 @@ Como son 4 ejercicios a realizar, crearé una carpeta pages, en estas estarán l
 * index.html -> contendrá un título y las listas estarán dentro de un contenedor:
 ```sh
 <body>
-    <h1>Trabajos</h1>
     <div class="paginas">
       <ul>
         <li><a href="src/pages/ejercicio-a/ejercicio-a.html" target="_blank">Mi Página Web</a></li>
@@ -555,11 +554,13 @@ En este punto debo de crear un formulario con diferentes campos (nombre, correo 
 ```sh
 # ejerecicio-c.html
 <body>
+
     <div class="formulario">
+
         <form action="#">
 
             <div class="image">
-                <img src="/image/human-and-ia.webp" alt="imagen mano humana y de la ia">
+                <img src="/image/palmeras.webp" alt="imagen palmeras">
             </div>
 
             <div class="datos">
@@ -572,12 +573,55 @@ En este punto debo de crear un formulario con diferentes campos (nombre, correo 
                 <input type="email" name="email" id="email">
             </div>
 
+            <div class="datos">
+                <label for="password">Contraseña:</label>
+                <input type="password" name="password" id="pasword">
+            </div>
+
+            <div class="datos">
+                <label for="documento">Documento:</label>
+                <input type="text" pattern="[0-9]+" title="solo números" name="documento" id="documento">
+            </div>
+
+            <div class="datos">
+                <label for="info">Sobre vos...</label>
+                <textarea name="info" id="info"></textarea>
+            </div>
+
         </form>
+
         <div class="boton"><button>Enviar:</button></div>
     </div>
 
     <script type="module" src="/src/pages/ejercicio-c/main-c.js"></script>
 </body>
+```
+
+### Textarea
+Le agregué un textarea donde el usuario podrás escribir más sobre su persona, algo a destacar de este textarea, es que se podrá extender solo hacia abajo, esto lo logro con un resize en vertical:
+```sh
+#ejercicio-c.html
+<div class="datos">
+    <label for="info">Sobre vos...</label>
+    <textarea name="info" id="info"></textarea>
+</div>
+
+#style-c.css
+textarea{
+    padding: 10px 20px;
+    width: 100%;
+    border: 2px solid var(--color-5);
+    border-radius: 10px;
+    background-color: var(--color-2);
+    color: var(--color-5);
+    text-align: right;
+    resize: vertical;   
+}
+
+textarea:hover{
+    background-color: var(--color-3);
+    border-color: var(--color-4);
+}
 ```
 
 #### Breakpoints - Formulario

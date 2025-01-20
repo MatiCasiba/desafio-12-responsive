@@ -69,6 +69,17 @@ input{
     color: var(--color-5);
     text-align: right;
 }
+textarea{
+    padding: 10px 20px;
+    width: 100%;
+    border: 2px solid var(--color-5);
+    border-radius: 10px;
+    background-color: var(--color-2);
+    color: var(--color-5);
+    text-align: right;
+    resize: vertical;
+    
+}
 
 .boton{
     display: flex;
@@ -88,6 +99,10 @@ button{
     border-radius: 20px;
 }
 input:hover{
+    background-color: var(--color-3);
+    border-color: var(--color-4);
+}
+textarea:hover{
     background-color: var(--color-3);
     border-color: var(--color-4);
 }

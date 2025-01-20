@@ -12,7 +12,7 @@
         <form action="#">
 
             <div class="image">
-                <img src="/public/image/palmeras.webp" alt="imagen palmeras">
+                <img src="/image/palmeras.webp" alt="imagen palmeras">
             </div>
 
             <div class="datos">
@@ -23,6 +23,21 @@
             <div class="datos">
                 <label for="email">Correo electronico:</label>
                 <input type="email" name="email" id="email">
+            </div>
+
+            <div class="datos">
+                <label for="password">Contraseña:</label>
+                <input type="password" name="password" id="pasword">
+            </div>
+
+            <div class="datos">
+                <label for="documento">Documento:</label>
+                <input type="text" pattern="[0-9]+" title="solo números" name="documento" id="documento">
+            </div>
+
+            <div class="datos">
+                <label for="info">Sobre vos...</label>
+                <textarea name="info" id="info"></textarea>
             </div>
 
         </form>
